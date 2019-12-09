@@ -1,61 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home</title>
     <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous"
+/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <link href="style.css" rel="stylesheet" />
-  </head>
-  <body>
-    <div class="header">
-      <img class="icon" src="paper.png" />
-      New York Times Search
-    </div>
+</head>
 
+<body>
+    <nav class="navbar navbar-light navbar-expand bg-light navigation-clean">
+        <div class="container"><a class="navbar-brand" href="#"><img src="./assets/img/Mia-logo light.png" height="40" width="140"></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"></button>
+            <div class="collapse navbar-collapse" id="navcol-1"></div>
+        </div>
+    </nav>
+    <header class="masthead text-white text-center" style="background: url('assets/img/bg-masthead.jpg')no-repeat center center;background-size: cover;background-image: url(&quot;assets/img/burning-fashion-newspaper.jpg&quot;);">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-9 mx-auto">
+                    <h1 class="mb-5">New York Times Keyword Search</h1>
+                    <h1 class="mb-5" style="font-size: 20px;">Article search of the New York Times to look up articles by keyword</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+<form id="myForm">
     <div class="container">
-      <div class="row containerHead">
-        Search Parameters
-      </div>
-      <div class="row">
-        <input class="input mandatory" placeholder="Search Term:" id="searchTerm" type="text" />
-      </div>
-      <div class="row">
-        <input class="input mandatory" placeholder="Number of Records (max 9)" id="numRecords" type="number" />
-      </div>
-      <div class="row">
-        <input class="input optional" placeholder="Start Year (optional)" id="startYear" type="text" />
-      </div>
-      <div class="row">
-        <input class="input optional" placeholder="End Year (optional)" id="endYear" type="text" />
-      </div>
-      <div class="row"><button id="search" class="footerBtn"><img class="foot-icon" src="mag.png"> Search</button><button class="footerBtn"><img class="foot-icon" src="trash.png">Clear Results</button> </div>
-    </div>
+        <div class="row containerHead">
+            <div> &#128269; Search Parameters &#128270;</div>
+            
+        </div>
+        <div class="row">
+            <input class="input mandatory" placeholder="Search Term:" id="searchTerm" type="text" />
+        </div>
+    
+        <div class="row">
+            <input class="input mandatory" placeholder="Number of Records (max 9)" id="numRecords" type="number" />
+        </div>
+    
+        <div class="row">
+            <input class="input optional" placeholder="Start Year (optional)" id="startYear" type="text" />
+        </div>
+    
+        <div class="row">
+            <input class="input optional" placeholder="End Year (optional)" id="endYear" type="text" />
+        </div>
 
-    <div class="container">
-        <div class="row containerHead"><img class="icon" src="calendar.png">Top Articles </div>
+    <div class="container" style="text-align: center;">
+        <h2 class="mb-5">
+            <div class="btn-group" role="group" style="width: 300px;" >
+
+                <button class="btn btn-primary" type="button" id="search" style="margin: 5px;">Search Articles</button>
+
+                <button class="btn btn-primary" type="button" onclick="myFunction()"style="margin: 5px;" >Clear Search</button>
+            </div>
+        </h2>
+    </div> 
+</div>          
+</form>
+      <hr>      
+    <div class="container" >
+        <div class="row containerHead">
+                <div> &#128293; Top Articles &#128293;</div>
+                
+        </div>
         <div class="row" id="topArticles"></div>
     </div>
 
-    <footer>Made with lots of <img class="icon" src="heart.png"> </footer>
+    <footer class="footer bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 my-auto h-100 text-center text-lg-left">
+                    <p class="text-muted small mb-4 mb-lg-0">&copy; Copyright 2019 Mia Dugas. Some Rights Reserved. Made with <i class="fa fa-xs fa-heart" style="color:red "></i></p>
+                </div>
+                <div class="col-lg-6 my-auto h-100 text-center text-lg-right">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-facebook fa-2x fa-fw"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-twitter fa-2x fa-fw"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin fa-2x fa-fw"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-github fa-2x fa-fw"></i></a></li>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                        <!-- <li class="list-inline-item"><a href="#"><i class="fa fa-instagram fa-2x fa-fw"></i></a></li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
-  </body>
+</body>
+
 </html>

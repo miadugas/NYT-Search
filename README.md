@@ -4,4 +4,4 @@ An App built with HTML, CSS & JavaScript that demonstrates a Server Side API tha
 
 Deployed Site: https://miadugas.github.io/NewYorkTimesAPI-Search/
 
-Group collaboration with Will Wojeck, Lindsey Brown and Lucy Palmer.
+
